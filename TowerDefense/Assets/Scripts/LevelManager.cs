@@ -47,11 +47,11 @@ public class LevelManager : MonoBehaviour
 
     private void PlaceTile(string tileType, int i, int j, Vector3 worldStartPosition)
     {
-        int tileIndex = int.Parse(tileType); 
+        int tileIndex = int.Parse(tileType);
 
-
-        GameObject newTile = Instantiate(tilePrefabs[tileIndex]);
-        newTile.transform.position = new Vector3(worldStartPosition.x + TileSize()/2 + (TileSize() * i), worldStartPosition.y - (TileSize()/2) - (TileSize() * j), 0);
+        TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
+        
+        newTile.Setup(new Point(i,j), new Vector3(worldStartPosition.x + TileSize() / 2 + (TileSize() * i), worldStartPosition.y - (TileSize() / 2) - (TileSize() * j), 0));
     }
 
     private string[] ReadLevelText()

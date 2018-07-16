@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 1034503579470126, guid: 788700b5cb7aa1a4cb402744512ff916, type: 2}
-  - {fileID: 1729526427568438, guid: 554d5870aa5235a4986f840068b7e537, type: 2}
+  - {fileID: 1840808240092848, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
 --- !u!4 &826739481
 Transform:
   m_ObjectHideFlags: 0
@@ -184,6 +184,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &871046117
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.936987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.7635915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814201224859356, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5878327fe0170104990e5ad1b6df37db, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1733032417
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +278,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.988842
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

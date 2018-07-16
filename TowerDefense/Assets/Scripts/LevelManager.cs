@@ -8,8 +8,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject [] tilePrefabs;
 
+    public Dictionary<Point,TileScript> Tiles { get; set; }
 
-	void Start ()
+
+    void Start ()
     {
         CreateLevel();
 	}
@@ -27,6 +29,8 @@ public class LevelManager : MonoBehaviour
 
     private void CreateLevel()
     {
+
+        Tiles = new Dictionary<Point, TileScript>();
 
         string[] mapData = ReadLevelText();
 
@@ -52,6 +56,10 @@ public class LevelManager : MonoBehaviour
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
         
         newTile.Setup(new Point(i,j), new Vector3(worldStartPosition.x + TileSize() / 2 + (TileSize() * i), worldStartPosition.y - (TileSize() / 2) - (TileSize() * j), 0));
+
+        Tiles.Add(new Point(i, j), newTile);
+
+
     }
 
     private string[] ReadLevelText()
@@ -63,4 +71,7 @@ public class LevelManager : MonoBehaviour
         return data.Split('-');
     }
 
+   
+
+    
 }

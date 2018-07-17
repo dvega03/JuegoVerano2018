@@ -5,8 +5,17 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Tiles del nivel")]
     [SerializeField]
     private GameObject [] tilePrefabs;
+    [Header("Instanciado del Spawn de los enemigos")]
+    [SerializeField]
+    private GameObject spawnPortal;
+    public Vector2 spawnPortalPoint;
+    [Header("Instanciado de la Meta de los enemigos")]
+    [SerializeField]
+    private GameObject goalPortal;
+    public Vector2 goalPortalPoint;
 
     public Dictionary<Point,TileScript> Tiles { get; set; }
 
@@ -47,6 +56,9 @@ public class LevelManager : MonoBehaviour
                 PlaceTile(mapData[j][i].ToString(),i,j, worldStartPosition);
             }
         }
+
+        Portals();
+
     }
 
     private void PlaceTile(string tileType, int i, int j, Vector3 worldStartPosition)
@@ -69,6 +81,15 @@ public class LevelManager : MonoBehaviour
         string data = bindData.text.Replace(Environment.NewLine, string.Empty);
 
         return data.Split('-');
+    }
+
+    private void Portals()
+    {
+        Point pointSpawn = new Point((int)spawnPortalPoint.x,(int)spawnPortalPoint.y);
+        Instantiate(spawnPortal,Tiles[pointSpawn].transform.position, Quaternion.identity);
+
+        Point pointGoal = new Point((int)goalPortalPoint.x, (int)goalPortalPoint.y);
+        Instantiate(goalPortal, Tiles[pointGoal].transform.position, Quaternion.identity);
     }
 
    

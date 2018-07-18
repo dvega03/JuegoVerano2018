@@ -21,8 +21,9 @@ public class TileScript : MonoBehaviour
 
     public void Setup(Point gridPos, Vector3 worldPos)
     {
-        this.GridPosition = GridPosition;
+        this.GridPosition = gridPos;
         transform.position = worldPos;
+        LevelManager.Instace.Tiles.Add(gridPos, this);
     }
 
 }

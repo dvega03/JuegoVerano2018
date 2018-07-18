@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     [Header("Tiles del nivel")]
     [SerializeField]
@@ -68,9 +68,6 @@ public class LevelManager : MonoBehaviour
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
         
         newTile.Setup(new Point(i,j), new Vector3(worldStartPosition.x + TileSize() / 2 + (TileSize() * i), worldStartPosition.y - (TileSize() / 2) - (TileSize() * j), 0));
-
-        Tiles.Add(new Point(i, j), newTile);
-
 
     }
 

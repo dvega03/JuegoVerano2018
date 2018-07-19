@@ -5,14 +5,19 @@ using System;
 
 public class LevelManager : Singleton<LevelManager>
 {
+    [SerializeField]
+    private Transform map;
+
     [Header("Tiles del nivel")]
     [SerializeField]
     private GameObject [] tilePrefabs;
+
     [Header("Instanciado del Spawn de los enemigos")]
     [SerializeField]
     private GameObject spawnPortal;
     public Vector2 spawnPortalPoint;
     [Header("Instanciado de la Meta de los enemigos")]
+
     [SerializeField]
     private GameObject goalPortal;
     public Vector2 goalPortalPoint;
@@ -67,7 +72,7 @@ public class LevelManager : Singleton<LevelManager>
 
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
         
-        newTile.Setup(new Point(i,j), new Vector3(worldStartPosition.x + TileSize() / 2 + (TileSize() * i), worldStartPosition.y - (TileSize() / 2) - (TileSize() * j), 0));
+        newTile.Setup(new Point(i,j), new Vector3(worldStartPosition.x + TileSize() / 2 + (TileSize() * i), worldStartPosition.y - (TileSize() / 2) - (TileSize() * j), 0),map);
 
     }
 

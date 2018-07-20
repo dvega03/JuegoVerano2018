@@ -2,29 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
+    [SerializeField]
+    private GameObject towerPrefab;
 
-    public static GameManager instance = null;
-
-
-    public float score;
-
-
-    void Awake()
+    public GameObject TowerPrefab
     {
-
-        if (instance == null)
+        get
         {
-
-            instance = this;
-
-            DontDestroyOnLoad(this.gameObject);
+            return towerPrefab;
         }
-        else
-        {
 
-            Destroy(this.gameObject);
-        }
     }
+
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }

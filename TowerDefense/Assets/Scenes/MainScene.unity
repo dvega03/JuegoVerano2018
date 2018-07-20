@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 313226025}
+  - component: {fileID: 313226026}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -141,6 +142,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &313226026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 313226024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8789f1c09f178784e84195b5abeb7cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 1681650906123566, guid: e5dd04cecea16db4eac1673031b480ca,
+    type: 2}
 --- !u!1 &826739479
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +252,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0
+  near clip plane: -1
   far clip plane: 1000
   field of view: 60
   orthographic: 1

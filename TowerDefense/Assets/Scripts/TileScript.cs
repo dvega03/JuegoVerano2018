@@ -27,4 +27,17 @@ public class TileScript : MonoBehaviour
         LevelManager.Instace.Tiles.Add(gridPos, this);
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlaceTower();
+        }
+    }
+
+    private void PlaceTower()
+    {
+        Instantiate(GameManager.Instace.TowerPrefab, transform.position, Quaternion.identity);
+    }
+
 }

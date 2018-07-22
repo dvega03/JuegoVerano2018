@@ -37,7 +37,8 @@ public class TileScript : MonoBehaviour
 
     private void PlaceTower()
     {
-        Instantiate(GameManager.Instace.TowerPrefab, transform.position, Quaternion.identity);
+        GameObject torreGO = Instantiate(GameManager.Instace.ClickedButton.TowerPrefab, transform.position, Quaternion.identity);
+        torreGO.transform.SetParent(transform);
     }
 
 }
